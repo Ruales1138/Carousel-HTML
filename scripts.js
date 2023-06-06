@@ -6,9 +6,11 @@ window.onload = function() {
     ];
     const TIME = 1000;
     let current = 0;
+    let $image = document.querySelector('#image');
     let $prev = document.querySelector('#prev');
     let $next = document.querySelector('#next');
-    let $image = document.querySelector('#image');
+    let $play = document.querySelector('#play');
+    let $stop = document.querySelector('#stop');
     let interval;
 
     function renderImage() {
@@ -27,7 +29,25 @@ window.onload = function() {
         renderImage();
     };
 
+    function playImages() {
+        interval = setInterval(nextImage, TIME);
+        $next.setAttribute('disabled', true);
+        $prev.setAttribute('disabled', true);
+        $play.setAttribute('disabled', true);
+        $stop.removeAttribute('disabled');
+    };
+
+    function stopImages() {
+        clearInterval(interval);
+        $next.removeAttribute('disabled');
+        $prev.removeAttribute('disabled');
+        $play.removeAttribute('disabled');
+        $stop.setAttribute('disabled', true);
+    };
+
     $next.addEventListener('click', nextImage);
     $prev.addEventListener('click', prevImage);
+    $play.addEventListener('click', playImages);
+    $stop.addEventListener('click', stopImages);
     renderImage();
 };
