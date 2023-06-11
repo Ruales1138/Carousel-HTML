@@ -6,13 +6,11 @@ window.onload = function() {
         'https://rickandmortyapi.com/api/character/avatar/4.jpeg',
         'https://rickandmortyapi.com/api/character/avatar/5.jpeg'
     ];
-    const TIME = 1000;
+    const TIME = 1500;
     let current = 0;
     let $image = document.querySelector('#image');
     let $prev = document.querySelector('#prev');
     let $next = document.querySelector('#next');
-    let $play = document.querySelector('#play');
-    let $stop = document.querySelector('#stop');
     let interval;
 
     function renderImage() {

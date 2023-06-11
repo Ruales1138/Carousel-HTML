@@ -1,6 +1,6 @@
 .container {
     display: grid;
-    place-items: center; /* Centra tanto horizontal como verticalmente */
+    place-items: center;
     height: 600px;
 }
 
@@ -14,9 +14,29 @@
     width: 400px;
     height: 400px;
     background-size: cover;
+    border-radius: 5px;
 }
 
 .controls {
     text-align: center;
 }
 
+#prev{
+    margin-right: 20px;
+}
+
+#next{
+    margin-left: 20px;
+}
+
+.button{
+    border: none;
+    height: 40px;
+    width: 40px;
+    margin-top: 180px;
+    border-radius: 10px;
+}
+
+.button:hover{
+    background-color: lightgray;
+}
