@@ -2,7 +2,9 @@ window.onload = function() {
     const IMAGES = [
         'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
         'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
-        'https://rickandmortyapi.com/api/character/avatar/3.jpeg'
+        'https://rickandmortyapi.com/api/character/avatar/3.jpeg',
+        'https://rickandmortyapi.com/api/character/avatar/4.jpeg',
+        'https://rickandmortyapi.com/api/character/avatar/5.jpeg'
     ];
     const TIME = 1000;
     let current = 0;
@@ -21,33 +23,32 @@ window.onload = function() {
         if(current >= IMAGES.length - 1) current = 0;
         else current++;
         renderImage();
+        stopImages();
     };
 
     function prevImage() {
         if(current <= 0) current = IMAGES.length - 1;
         else current--;
         renderImage();
+        stopImages();
+    };
+
+    function autoImage() {
+        if(current >= IMAGES.length - 1) current = 0;
+        else current++;
+        renderImage();
     };
 
     function playImages() {
-        interval = setInterval(nextImage, TIME);
-        $next.setAttribute('disabled', true);
-        $prev.setAttribute('disabled', true);
-        $play.setAttribute('disabled', true);
-        $stop.removeAttribute('disabled');
+        interval = setInterval(autoImage, TIME);
     };
 
     function stopImages() {
         clearInterval(interval);
-        $next.removeAttribute('disabled');
-        $prev.removeAttribute('disabled');
-        $play.removeAttribute('disabled');
-        $stop.setAttribute('disabled', true);
     };
 
     $next.addEventListener('click', nextImage);
     $prev.addEventListener('click', prevImage);
-    $play.addEventListener('click', playImages);
-    $stop.addEventListener('click', stopImages);
     renderImage();
+    playImages();
 };

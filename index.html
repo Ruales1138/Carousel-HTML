@@ -3,18 +3,22 @@
     <head>
         <title>Carousel</title>
         <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     </head>
 
     <body>
-        <div class="carousel">
-            <button id="prev">Prev</button>
-            <div id="image"></div>
-            <button id="next">Next</button>
-        </div>
+        <div class="container">
+            <div class="carousel">
+                <button id="prev">     
+                    <i class="fas fa-arrow-left"></i>
+                </button>
 
-        <div class="controls">
-            <button id="play">Play</button>
-            <button id="stop" disabled>Stop</button>
+                <div id="image"></div>
+
+                <button id="next">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
         </div>
 
         <script src="scripts.js"></script>

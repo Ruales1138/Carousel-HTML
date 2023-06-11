@@ -1,3 +1,9 @@
+.container {
+    display: grid;
+    place-items: center; /* Centra tanto horizontal como verticalmente */
+    height: 600px;
+}
+
 .carousel {
     max-width: 800px;
     margin: 0 auto;
@@ -5,7 +11,7 @@
 }
 
 #image {
-    width: 100%;
+    width: 400px;
     height: 400px;
     background-size: cover;
 }
